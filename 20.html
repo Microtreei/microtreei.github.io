@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <title>五分钟上手之散点图</title>
+        <!-- 引入 echarts.js -->
+        <script src="lib/echarts.min.js"></script>
+        <script src="https://s3.pstatp.com/cdn/expire-1-M/jquery/3.1.1/jquery.min.js"></script>
+    </head>
+
+    <body>
+        <!-- 为ECharts准备一个具备大小（宽高）的Dom -->
+        <div style="height: 1200px;width: 600px;" id="Scatter"></div>
+        <script type="text/javascript">
+            $(document).ready(function() {
+                var MyScatter = echarts.init(document.getElementById('Scatter'));
+
+                var data = [
+                    [0.0,'2021-10-27',
+                       
+                        "谷爱凌",10
+                    ],
+                    [
+                       0.02, '2022-01-04',
+                        
+                        "谷爱凌",13
+                    ],[
+                       -0.07, '2022-02-09',
+                      
+                        "谷爱凌", 35
+                    ],
+                    [
+                        0.15,'2022-02-15',
+                       
+                        "谷爱凌",20
+                    ],
+                    
+                    [
+                        -0.01,'2022-05-03',
+                     
+                        "谷爱凌"
+                        ,11
+                    ],
+                   
+                ];
+
+
+
+                var data1 = [
+                
+                    [
+                       0.145, '2022-02-05',
+                        
+                        "安贤洙",2
+                    ],
+                    [
+                       0.14, '2022-02-06',
+                      
+                        "安贤洙",4
+                    ],
+                    [
+                        0.13,'2022-02-09',
+                       
+                        "安贤洙",2
+                    ],[
+                        0.12,'2022-02-10',
+                     
+                        "安贤洙"
+                        ,9
+                    ],
+                    
+                ];
+
+                var data2 = [
+                   
+                    [
+                       0, '2021-05-04',
+                        
+                        "冰雪经济",3
+                    ],
+                    [
+                       0, '2021-11-09',
+                      
+                        "冰雪经济",6
+                    ],
+                    [
+                        0,'2021-12-27',
+                       
+                        "冰雪经济",1
+                    ],[
+                        0,'2022-01-12',
+                     
+                        "冰雪经济"
+                        ,1
+                    ],
+                    
+                ];
+
+
+                var data3 = [
+                   
+                   
+                    [
+                       0, '2021-10-05',
+                      
+                        "冰雪跨境",1
+                    ],
+                    [
+                        0,'2022-01-04',
+                       
+                        "冰雪跨境",12
+                    ],[
+                        0.1,'2022-02-08',
+                     
+                        "冰雪跨境",2
+                       
+                    ], [
+                        0.065,'2022-02-11',
+                     
+                        "冰雪跨境",27
+                        
+                    ],
+                    
+                ];
+
+
+                var data5 = [
+                  
+                 
+                    [
+                        0.03,'2021-05-31',
+                       
+                        "归化球员",15
+                    ],[
+                        0,'2021-10-14',
+                     
+                        "归化球员",20
+                        ,3
+                    ],
+                    [
+                        0,'2021-11-15',
+                     
+                        "归化球员",4
+                        ,3
+                    ],
+                    [
+                        -0.07,'2022-01-24',
+                     
+                        "归化球员",17
+                        ,3
+                    ],
+                    
+                ];
+
+                var data6 = [
+                  
+                    [
+                        0,'2020-10-28',
+                       
+                        "归化运动员",1
+                    ],[
+                        0,'2021-03-07',
+                     
+                        "归化运动员"
+                        ,6
+                    ],
+                    
+                    [
+                        -0.11,'2022-02-13',
+                     
+                        "归化运动员"
+                        ,3
+                    ],
+                 
+                ];
+
+
+
+                var data7 = [
+                
+                   
+                
+                   [
+                        -0.1,'2022-03-15',
+                     
+                        "国际主义"
+                        ,1
+                    ],
+                    
+                 
+                ];
+
+                var data8 = [
+                    
+                   [
+                        0,'2021-03-16',
+                     
+                        "混血运动员"
+                        ,2
+                    ],
+                    
+                    
+                 
+                ];
+
+
+                
+                var data9 = [
+                    
+                    [
+                       0, '2021-07-03',
+                        
+                       "林孝俊",7
+                    ],
+                    [
+                       0, '2021-10-20',
+                      
+                       "林孝俊",5
+                    ],
+                    [
+                        0.13,'2022-02-11',
+                       
+                        "林孝俊",16
+                    ],[
+                        0.07,'2022-02-15',
+                     
+                        "林孝俊"
+                        ,2
+                    ],
+                    [
+                        0.08,'2022-02-19',
+                     
+                        "林孝俊"
+                        ,1
+                    ],
+                    
+                 
+                ];
+
+                
+
+                    var data11 = [
+                    [0.11,'2022-02-06',
+                       
+                        "朱易",20
+                    ],
+                    [
+                       0.09, '2022-02-07',
+                        
+                       "朱易",16
+                    ],
+                    [
+                       -0.1, '2022-02-13',
+                      
+                       "朱易",17
+                    ],
+                    
+                   
+                 
+                ];
+
+                var data12 = [
+                  
+                  
+                    
+                    [
+                       0.027, '2022-03-14',
+                      
+                       "归化入籍",7
+                    ],
+                ];
+
+                var data13 = [
+                    [0,'2022-08-07',
+                       
+                        "归化入籍",0
+                    ],
+                   
+                    
+                ];
+
+
+                var textStyle = {
+                    color: '#333',
+                    fontStyle: 'normal',
+                    fontWeight: 'normal',
+                    fontFamily: '微软雅黑',
+                    fontSize: 14,
+                };
+                
+                option = {
+                    legend: {
+                data: [{name:'谷爱凌'},{name:'安贤洙'},{name:"冰雪经济"},{name:"冰雪跨境"},{name:"放弃国籍"},{name:"归化球员"},{name:"归化运动员"},
+                {name:"国际主义"},{name:"混血运动员"},{name:"双重国籍"},{name:"林孝俊"},{name:"朱易"},{name:"归化入籍"}],
+                left: 'right',
+                top:'bottom'
+                     },
+
+                    tooltip: {
+            trigger: 'item'
+          },
+                     tooltip: {  
+                    /*返回需要的信息*/  
+                    formatter: function(param) {  
+                        var value = param.value;  
+                        return '<div style="border-bottom: 1px solid rgba(255,255,255,.3); font-size: 16px;padding-bottom: 7px;margin-bottom: 7px;"> ' + value[2] + '(' + value[1] + ')' +  
+                            '</div>';  
+                    }  
+                },
+                    yAxis: {
+                        type: 'time',
+                        name: '时间轴',
+                        data:data,
+                        inverse:true,
+                        axisLabel: {
+             //设置日期显示样式（倾斜度）
+              formatter: function (value) {//在这里写你需要的时间格式
+                var t_date = new Date(value);
+                return [t_date.getFullYear(), t_date.getMonth() + 1, t_date.getDate()].join('-')
+                // + " " + [t_date.getHours(), t_date.getMinutes()].join(':'); 时分
+              }}
+                    },
+                    xAxis: {
+        
+                        type: 'value',
+                        //name: '次数值',
+                        // show:false,
+                            data:0,
+                       max:0.3,
+                       min: -0.3,
+                     axisLabel: {
+          show: false,//不显示坐标轴上的文字
+    },interval:0.2
+                    },
+            
+                    series: [
+
+                {left:'50%',
+                        name: '谷爱凌',
+                        data: data,
+                        type: 'scatter',
+                        symbolSize:
+                        function (Item) {
+                            return Item[3] ;},
+                    label:function(item){
+                        return item[2]
+                    }
+                },
+                {
+                    name: '谷爱凌',
+                        data:[{value:
+                            [
+                        0,'2022-02-20',
+                     
+                        "谷爱凌"
+                        ,80
+                    ],
+                       
+                       label: {
+                        show:true,
+                        fontSize:20,
+                        formatter:"谷爱凌",
+                        fontStyle:'lighter',
+                        position:'left',
+                        distance:10,
+                        color:'inherit'
+                        },
+                        labelLine:{show:true}
+                        }]
+                       , type: 'scatter',
+                        symbolSize:
+                        function (Item) {
+                            return Item[3] ;},
+
+                },
+                {
+                    name: '谷爱凌',
+                        data:[{value:
+                            [
+                        0.05,'2022-05-05',
+                     
+                        "谷爱凌"
+                        ,50
+                    ],
+                       
+                       label: {
+                        show:true,
+                        fontSize:15,
+                        formatter:"谷爱凌",
+                        fontStyle:'lighter',
+                        position:'right',
+                        distance:10,
+                        color:'inherit'
+                        },
+                        labelLine:{show:true}
+                        }]
+                       , type: 'scatter',
+                        symbolSize:
+                        function (Item) {
+                            return Item[3] ;},
+
+                },
+                
+               
+                
+                
+                {
+                    name: '',
+                        data: data1,
+                        type: 'scatter',
+                        symbolSize:
+                        function (Item) {
+                            return Item[3] ;},
+
+                },
+                {
+                    name: '安贤洙',
+                        data:[{value:
+                            [
+                        0.05,'2022-03-14',
+                     
+                        "安贤洙"
+                        ,30
+                    ],
+                       
+                       label: {
+                        show:true,
+                        fontSize:15,
+                        formatter:"安贤洙",
+                        fontStyle:'lighter',
+                        position:'right',
+                        distance:10,
+                        color:'inherit'
+                        },
+                        labelLine:{show:true}
+                        }]
+                       , type: 'scatter',
+                        symbolSize:
+                        function (Item) {
+                            return Item[3] ;},
+
+                },
+
+                
+                {
+                    name: '冰雪经济',
+                        data: data2,
+                        type: 'scatter',
+                        symbolSize:
+                        function (Item) {
+                            return Item[3] ;},
+
+                },
+
+                {
+                    name: '冰雪经济',
+                        data:[{value:
+                            [
+                        0.06,'2022-01-28',
+                     
+                        "冰雪经济"
+                        ,42
+                    ],
+                       
+                       label: {
+                        show:true,
+                        fontSize:13,
+                        formatter:"冰雪经济",
+                        fontStyle:'lighter',
+                        position:'right',
+                        distance:10,
+                        color:'inherit'
+                        },
+                        labelLine:{show:true}
+                        }]
+                       , type: 'scatter',
+                        symbolSize:
+                        function (Item) {
+                            return Item[3] ;},
+
+                },
+                
+                {
+                    name: '冰雪跨境',
+                        data: data3,
+                        type: 'scatter',
+                        symbolSize:
+                        function (Item) {
+                            return Item[3] ;},
+
+                },
+               
+               
+                {
+                    name: '放弃国籍',
+                        data:[{value:
+                            [
+                        0.0,'2021-07-24',
+                     
+                        "放弃国籍"
+                        ,34
+                    ],
+                       
+                       label: {
+                        show:true,
+                        fontSize:13,
+                        formatter:"放弃国籍",
+                        fontStyle:'lighter',
+                        position:'right',
+                        distance:10,
+                        color:'inherit'
+                        },
+                        labelLine:{show:true}
+                        }]
+                       , type: 'scatter',
+                        symbolSize:
+                        function (Item) {
+                            return Item[3] ;},
+
+                },
+                
+                
+                {
+                    name: '',
+                        data: data5,
+                        type: 'scatter',
+                        symbolSize:
+                        function (Item) {
+                            return Item[3] ;},
+
+                },
+                {
+                    name: '归化球员',
+                        data:[{value:
+                            [
+                        -0.03,'2022-01-30',
+                     
+                        "归化球员",47
+                        ,3
+                    ],
+                       
+                       label: {
+                        show:true,
+                        fontSize:13,
+                        formatter:"归化球员",
+                        fontStyle:'lighter',
+                        position:'top',
+                        distance:10,
+                        color:'inherit'
+                        },
+                        labelLine:{show:true}
+                        }]
+                       , type: 'scatter',
+                        symbolSize:
+                        function (Item) {
+                            return Item[3] ;},
+
+                },
+                
+                
+                {
+                    name: '归化运动员',
+                        data: data6,
+                        type: 'scatter',
+                        symbolSize:
+                        function (Item) {
+                            return Item[3] ;},
+
+                },
+
+                
+
+                    {
+                    name: '归化运动员',
+                        data:[{value:
+                            [
+                        -0.1,'2022-01-30',
+                     
+                        "归化运动员"
+                        ,29
+                    ],
+                       
+                       label: {
+                        show:true,
+                        fontSize:13,
+                        formatter:"归化运动员",
+                        fontStyle:'lighter',
+                        position:'left',
+                        distance:10,
+                        color:'inherit'
+                        },
+                        labelLine:{show:true}
+                        }]
+                       , type: 'scatter',
+                        symbolSize:
+                        function (Item) {
+                            return Item[3] ;},
+
+                },
+
+                {
+                    name: '国际主义',
+                        data: data7,
+                        type: 'scatter',
+                        symbolSize:
+                        function (Item) {
+                            return Item[3] ;},
+
+                },
+
+                
+
+                    {
+                    name: '国际主义',
+                        data:[{value:
+                            [
+                        0,'2021-08-12',
+                       
+                        "国际主义",26
+                    ],
+                       
+                       label: {
+                        show:true,
+                        fontSize:13,
+                        formatter:"国际主义",
+                        fontStyle:'lighter',
+                        position:'left',
+                        distance:10,
+                        color:'inherit'
+                        },
+                        labelLine:{show:true}
+                        }]
+                       , type: 'scatter',
+                        symbolSize:
+                        function (Item) {
+                            return Item[3] ;},
+
+                },
+                {
+                    name: '混血运动员',
+                        data: data8,
+                        type: 'scatter',
+                        symbolSize:
+                        function (Item) {
+                            return Item[3] ;},
+
+                },
+                {
+                    name: '混血运动员',
+                        data:[{value:
+                            [
+                        0.018,'2021-08-04',
+                     
+                        "混血运动员"
+                        ,14
+                    ],
+                       
+                       label: {
+                        show:true,
+                        fontSize:13,
+                        formatter:"混血运动员",
+                        fontStyle:'lighter',
+                        position:'right',
+                        distance:10,
+                        color:'inherit'
+                        },
+                        labelLine:{show:true}
+                        }]
+                       , type: 'scatter',
+                        symbolSize:
+                        function (Item) {
+                            return Item[3] ;},
+
+                },
+               
+                {
+                    name: '林孝俊',
+                        data: data9,
+                        type: 'scatter',
+                        symbolSize:
+                        function (Item) {
+                            return Item[3] ;},
+
+                },
+
+                
+
+                    {
+                    name: '林孝俊',
+                        data:[{value:
+                            [0,'2021-03-06',
+                       
+                        "林孝俊",60
+                    ],
+                       
+                       label: {
+                        show:true,
+                        fontSize:13,
+                        formatter:"林孝俊",
+                        fontStyle:'lighter',
+                        position:'right',
+                        distance:10,
+                        color:'inherit'
+                        },
+                        labelLine:{show:true}
+                        }]
+                       , type: 'scatter',
+                        symbolSize:
+                        function (Item) {
+                            return Item[3] ;},
+
+                },
+
+                {
+                    name: '双重国籍',
+                        data:[{value:
+                            [
+                        0.,'2021-05-18',
+                     
+                        "双重国籍",52
+                        
+                    ],
+                       
+                       label: {
+                        show:true,
+                        fontSize:13,
+                        formatter:"双重国籍",
+                        fontStyle:'lighter',
+                        position:'right',
+                        distance:10,
+                        color:'inherit'
+                        },
+                        labelLine:{show:true}
+                        }]
+                       , type: 'scatter',
+                        symbolSize:
+                        function (Item) {
+                            return Item[3] ;},
+
+                },
+                {
+                    name: '双重国籍',
+                        data:[{value:
+                            [
+                        0,'2022-04-13',
+                       
+                        "朱易",59
+                    ],
+                       
+                       label: {
+                        show:true,
+                        fontSize:13,
+                        formatter:"双重国籍",
+                        fontStyle:'lighter',
+                        position:'right',
+                        distance:10,
+                        color:'inherit'
+                        },
+                        labelLine:{show:true}
+                        }]
+                       , type: 'scatter',
+                        symbolSize:
+                        function (Item) {
+                            return Item[3] ;},
+
+                },
+                
+                
+
+                {
+                    name: '朱易',
+                        data: data11,
+                        type: 'scatter',
+                        symbolSize:
+                        function (Item) {
+                            return Item[3] ;},
+
+                },{
+                    name: '',
+                        data: data12,
+                        type: 'scatter',
+                        symbolSize:
+                        function (Item) {
+                            return Item[3] ;},
+
+                },
+                {
+                    name: '',
+                        data: data13,
+                        type: 'scatter',
+                        symbolSize:
+                        function (Item) {
+                            return Item[3] ;},
+
+                },
+
+            
+            
+            ]
+                
+                };
+
+                MyScatter.setOption(option);
+            });
+        </script>
+    </body>
+
+</html>
