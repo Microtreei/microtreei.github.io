@@ -392,6 +392,13 @@ for (let i = 1; i < 400; i++) {
   data.push([+now, d[i]]);
 }
 option = {
+    grid: {
+      x: 25,
+      y: 45,
+      x2: 5,
+      y2: 25,
+      borderWidth: 1,
+    },
   tooltip: {
     trigger: 'axis',
     position: function (pt) {
