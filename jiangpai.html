@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <!-- 引入 echarts.js -->
+        <script src="./echarts.min.js"></script>
+        <script src="https://s3.pstatp.com/cdn/expire-1-M/jquery/3.1.1/jquery.min.js"></script>
+    </head>
+
+    <body>
+        <!-- 为ECharts准备一个具备大小（宽高）的Dom -->
+        <div style="height: 400px;width: 800px;" id="Scatter"></div>
+        <script type="text/javascript">
+            $(document).ready(function() {
+                var MyScatter = echarts.init(document.getElementById('Scatter'));
+         
+                const data = [
+  [57133,	34280	,22853],
+[161192,	115091,	91880],
+[137188,	68618,	45762],
+[205683,	102842,	68561],
+[79988,	68561,	57133],
+[57133,	45707,	34280],
+[43193,	32395,	21597],
+[250000	,150000,	75000],
+[37500,	22500,	15000],
+[57133,	34280,	22853],
+[92000,	61272,	41000],
+];
+
+
+const cities = [
+'比利时',
+'匈牙利',
+'立陶宛',
+'意大利',
+'西班牙',
+'斯洛伐克',
+'瑞士',
+'哈萨克斯坦',
+'美国',
+'葡萄牙',
+'中国',
+];
+// prettier-ignore
+
+
+option = {
+    grid: {
+      x: 25,
+      y: 45,
+      x2: 5,
+      y2: 25,
+      borderWidth: 1,
+    },
+
+  title: {
+    text: '各国冰球运动获奖奖金数',
+    subtext: '数据来源:美国消费者新闻与商业频道(CNBC)',
+    left:'center'
+  },
+  legend: {
+    show: true,
+    top: 'bottom',
+    data: ['金牌', '银牌','铜牌']
+  },
+  
+  angleAxis: {
+    type: 'category',
+    data: cities
+  },
+  tooltip:{},
+  radiusAxis: {axisLabel:{formatter:'{value} $'}},
+  polar: {radius: [25, '63%'],tooltip:{}},
+  series: [
+    {
+      type: 'bar',
+      itemStyle: {
+        color: '#ffd700'
+      },
+      data: data.map(function (d) {
+        return d[0];
+      }),
+      coordinateSystem: 'polar',
+      stack: 'Min Max',      name: '金牌',
+
+    },
+    {
+      type: 'bar',
+      data: data.map(function (d) {
+        return d[1]+d[0] ;
+      }),
+
+      itemStyle: {
+        color: 'rgb(192,192,192)'
+      },
+      
+      coordinateSystem: 'polar',
+      name: '银牌',
+      stack: 'Min Max'
+    },
+    {
+      type: 'bar',
+      itemStyle: {
+        color: '#CDAE5F'
+      },
+      data: data.map(function (d) {
+        return d[2]+d[1]+d[0];
+      }),
+      coordinateSystem: 'polar',
+      stack: 'Min Max',
+      z: 10 ,name: '铜牌',
+    },
+   
+  ]
+};
+
+                
+                MyScatter.setOption(option);
+            });
+        </script>
+    </body>
+
+</html>
+
+
