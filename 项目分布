@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <!-- 引入 echarts.js -->
+        <script src="lib/echarts.min.js"></script>
+        <script src="https://s3.pstatp.com/cdn/expire-1-M/jquery/3.1.1/jquery.min.js"></script>
+    </head>
+
+    <body>
+        <!-- 为ECharts准备一个具备大小（宽高）的Dom -->
+        <div style="height: 400px;width: 700px;" id="Scatter"></div>
+        <script type="text/javascript">
+            $(document).ready(function() {
+                var MyScatter = echarts.init(document.getElementById('Scatter'));
+                option = {
+                    title: {
+    text: '归化运动员项目分布环形图',
+    subtext: '数据来源:',
+    left: 'center'
+  },
+    tooltip: {
+      trigger: 'item',
+      formatter: '{a} <br/>{b}: {c} ({d}%)'
+    },
+    legend: {
+      data: [
+        '自由式滑雪U型池、坡面障碍技巧、大跳台',
+        '冰球',
+        '花滑',
+        '短道速滑',
+       
+      ],
+     top:'bottom'
+    },
+    series: [
+      {
+
+        color:['#59c4e6', '#edafda', '#93b7e3', '#a5e7f0', '#cbb0e3'],
+        name: '项目',
+        type: 'pie',
+        selectedMode: 'single',
+        radius: [0, '30%'],
+        label: {
+          position: 'inner',
+          fontSize: 14
+        },
+        labelLine: {
+          show: false
+        },
+        data: [
+          { value: 19, name: '加拿大',selected:true },
+          { value: 9, name: '美国' },
+          { value: 1, name: '韩国' },
+          { value: 1, name: '中国(美国华裔归化)' },
+          { value: 1, name: '俄罗斯' },
+        ]
+      },
+      {
+        color:['#ffb980', '#2ec7c9','#b6a2de', '#5ab1ef',],
+        name: '项目',
+        type: 'pie',
+        radius: ['45%', '60%'],
+        labelLine: {
+          length: 30
+        },
+        label: {
+          formatter: '{a|{a}}{abg|}\n{hr|}\n  {b|{b}}{c}  {per|{d}%}  ',
+          backgroundColor: '#F6F8FC',
+          borderColor: '#8C8D8E',
+          borderWidth: 1,
+          borderRadius: 4,
+          rich: {
+            a: {
+              color: '#6E7079',
+              lineHeight: 22,
+              align: 'center'
+            },
+            hr: {
+              borderColor: '#8C8D8E',
+              width: '100%',
+              borderWidth: 1,
+              height: 0
+            },
+            b: {
+              color: '#4C5058',
+              fontSize: 14,
+              fontWeight: 'bold',
+              lineHeight: 33
+            },
+            per: {
+              color: '#fff',
+              backgroundColor: '#4C5058',
+              padding: [3, 4],
+              borderRadius: 4
+            }
+          }
+        },
+        data: [
+        { value: 1, name: '自由式滑雪U型池、坡面障碍技巧、大跳台' },
+          { value: 28, name: '冰球' },
+          { value: 1, name: '花滑' },
+          { value: 1, name: '短道滑雪' },
+
+  
+  
+        ]
+      }
+    ]
+  };
+                
+                MyScatter.setOption(option);
+            });
+        </script>
+    </body>
+
+</html>
