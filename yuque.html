@@ -1,104 +1,104 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <meta charset="utf-8" />
+    <title></title>
+    <!-- 引入 echarts.js -->
+    <script src="./echarts.min.js"></script>
+    <script src="https://s3.pstatp.com/cdn/expire-1-M/jquery/3.1.1/jquery.min.js"></script>
+  </head>
 
-    <head>
-        <meta charset="utf-8">
-        <title></title>
-        <!-- 引入 echarts.js -->
-        <script src="./echarts.min.js"></script>
-        <script src="https://s3.pstatp.com/cdn/expire-1-M/jquery/3.1.1/jquery.min.js"></script>
-    </head>
+  <body>
+    <!-- 为ECharts准备一个具备大小（宽高）的Dom -->
+    <div style="height: 800px; width: 800px" id="Scatter"></div>
+    <script type="text/javascript">
+      $(document).ready(function () {
+        var MyScatter = echarts.init(document.getElementById("Scatter"));
 
-    <body>
-        <!-- 为ECharts准备一个具备大小（宽高）的Dom -->
-        <div style="height: 300px;width: 300px;" id="Scatter"></div>
-        <script type="text/javascript">
-            $(document).ready(function() {
-                var MyScatter = echarts.init(document.getElementById('Scatter'));
-         
+        option = {
+          title: [
+            {
+              textStyle: {
+                color: "#000", //'black'，字体颜色
+                fontStyle: "normal", //'italic'(倾斜) | 'oblique'(倾斜体) ，字体风格
+                fontWeight: "bold", //'bold'(粗体) | 'bolder'(粗体) | 'lighter'(正常粗细) ，字体粗细
+                fontFamily: "sans-serif", //'sans-serif' | 'serif' | 'monospace' | 'Arial' | 'Courier New'
+                // 'Microsoft YaHei'(微软雅黑) ，文字字体
+                fontSize: 18, //字体大小
+                lineHeight: 18, //字体行高
+              },
+              text: "各国冰球运动评分图",
+              subtext: "数据来源：国际冰球联合会",
+              left: "center",
+            },
+          ],
+          legend: {
+            left: "center",
+            top: "bottom",
+          },
+          polar: {
+            radius: [40, "80%"],
+          },
+          angleAxis: {
+            max: 80,
+            startAngle: 75,
+          },
+          radiusAxis: {
+            type: "category",
+            data: [
+              "冰岛",
+              "波兰",
+              "中国",
+              "挪威",
+              "日本",
+              "德国",
+              "瑞典",
+              "瑞士",
+              "俄罗斯",
+              "美国",
+              "芬兰",
+              "加拿大",
+            ],
+          },
+          tooltip: {},
+          series: {
+            type: "bar",
+            data: [
+              2.96, 4.1, 4.5, 6.76, 9.1, 9.26, 15.15, 18.52, 25, 35.71, 62.5,
+              71.43,
+            ],
+            coordinateSystem: "polar",
+            label: {
+              position: "middle",
+              formatter: "{c}",
+            },
+            barCategoryGap: "40%",
+            itemStyle: {
+              normal: {
+                color: function (params) {
+                  var colorList = [
+                    "#a5bbc1",
+                    "#b0c4c2",
+                    "#c7ced0",
+                    "#b2b6b9",
+                    "#9eafc0",
+                    "#8297a5",
+                    "#818e95",
+                    "#718f98",
+                    "#8497a5",
+                    "#697b8e",
+                    "#485a6d",
+                    "#38586d",
+                  ];
+                  return colorList[params.dataIndex];
+                },
+              },
+            },
+          },
+        };
 
-option = {
-  title: [
-    {
-      text: '各国冰球运动评分图',
-      subtext: '数据来源:',
-      left: 'center'
-    }
-  ],
-  legend: {
-    show:true,
-    data:['冰岛']
-  },
-  polar: {
-    radius: [30, '80%']
-  },
-  angleAxis: {
-    max: 80,
-    startAngle: 75
-  },
-  radiusAxis: {
-    type: 'category',
-    data: [
-      '冰岛',
-      '波兰',
-      '中国',
-      '挪威',
-      '日本',
-      '德国',
-      '瑞典',
-      '瑞士',
-      '俄罗斯',
-      '美国',
-      '芬兰',
-      '加拿大'
-    ]
-  },
-  tooltip: {},
-  series: {
-    type: 'bar',
-    data: [2.96
-      , 4.1, 4.5, 6.76, 9.1, 9.26, 15.15, 18.52, 25, 35.71, 62.5, 71.43
-    ],
-    coordinateSystem: 'polar',
-    label: {
-      show: true,
-      position: 'middle',
-      formatter: '{c}'
-    },
-    barCategoryGap: '40%',
-    itemStyle: {
-      normal: {
-        color: function (params) {
-          var colorList = [
-            '#D4EC59',
-            '#23C2DB',
-            '#6D9AE7',
-            '#4A6FE2',
-            '#6D61E4',
-            '#E65A56',
-            '#FF974C',
-            '#FFDC4C',
-            '#FF974C',
-            '#5B6E96',
-            '#62D9AD',
-            '#5AAEF3'
-          ];
-          return colorList[params.dataIndex];
-        }
-      }
-    }
-  }
-  
-};
-
-
-
-                
-                MyScatter.setOption(option);
-            });
-        </script>
-    </body>
-
+        MyScatter.setOption(option);
+      });
+    </script>
+  </body>
 </html>
-
-
