@@ -9,7 +9,7 @@
 </head>
 
 <body>
-    <div id = 'div1' style="width: 800px;height: 600px;" ></div>
+    <div id = 'div1' style="width: 400px;height: 400px;" ></div>
     <script>// prettier-ignore
         var mychart = echarts.init(document.getElementById('div1'))   
 var option;
@@ -222,7 +222,7 @@ option = {
       color: ['#a5bbc1', '#b0c4c2', '#c7ced0','#38586d','#8297a5','#b2b6b9']
     },
     left:"right",
-    padding:[0, 120, 40, 20],
+    padding:[0, 30, 90, 20],
     origin:'horizontal',
     top:'bottom',
     hoverLink:true,    
@@ -230,11 +230,12 @@ option = {
   series: {
     type: 'sunburst',
     data: data,
-    radius: ['20%', '80%'],
+    radius: ['20%', '70%'],
             avoidLabelOverlap: true,
     label: {
       rotate: 'radial',
-      minAngle:4
+      minAngle:4,
+      fontSize: 10, //字体大小
     }
   }
 };

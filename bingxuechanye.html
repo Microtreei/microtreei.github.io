@@ -10,7 +10,7 @@
 
   <body>
     <!-- 为ECharts准备一个具备大小（宽高）的Dom -->
-    <div style="height: 600px; width: 900px" id="Scatter"></div>
+    <div style="height: 400px; width: 700px" id="Scatter"></div>
     <script type="text/javascript">
       $(document).ready(function () {
         var MyScatter = echarts.init(document.getElementById("Scatter"));
@@ -46,6 +46,7 @@
           },
           legend: {
             data: ["Scale", "Rate"],
+            padding: 15,
             top: "bottom",
           },
           xAxis: [

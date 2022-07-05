@@ -11,7 +11,7 @@
 
 <body>
   <!-- 为ECharts准备一个具备大小（宽高）的Dom -->
-  <div style="height: 600px;width: 600px;" id="Scatter"></div>
+  <div style="height: 400px;width: 400px;" id="Scatter"></div>
   <script type="text/javascript">
     $(document).ready(function () {
       var MyScatter = echarts.init(document.getElementById('Scatter'));
@@ -70,7 +70,7 @@
         legend: {
           show: true,
           top: 'bottom',
-          padding: 50,
+          padding: 20,
           data: ['金牌', '银牌', '铜牌']
           
         },
@@ -79,7 +79,7 @@
           type: 'category',
           data: cities,
           axisLabel:{
-            fontSize: 15
+            fontSize: 12
           },
         },
         tooltip: {},
@@ -88,7 +88,7 @@
             show: false, 
           }
         },
-        polar: { radius: [20, '60%'], tooltip: {} },
+        polar: { radius: [20, '65%'], tooltip: {} },
         series: [
           {
             type: 'bar',
