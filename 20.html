@@ -10,7 +10,7 @@
 
   <body>
     <!-- 为ECharts准备一个具备大小（宽高）的Dom -->
-    <div style="height: 1000px; width: 600px" id="Scatter"></div>
+    <div style="height: 1000px; width: 500px" id="Scatter"></div>
     <script type="text/javascript">
       $(document).ready(function () {
         var MyScatter = echarts.init(document.getElementById("Scatter"));
@@ -111,12 +111,18 @@
                 { name: "安贤洙" },
                 { name: "冰雪经济" },
                 { name: "冰雪跨境" },
+              ],
+              left: "center",
+              bottom: "60"
+            },
+            {
+              data: [
                 { name: "放弃国籍" },
                 { name: "归化球员" },
                 { name: "归化运动员" },
               ],
               left: "center",
-              top: "bottom",
+              bottom: "30"
             },
             {
               data: [
@@ -127,7 +133,7 @@
                 { name: "归化入籍" },
               ],
               left: "center",
-              bottom: "20",
+              bottom: "0",
             },
           ],
 
@@ -154,6 +160,7 @@
             data: data,
             inverse: true,
             axisLabel: {
+              fontSize: 9,
               //设置日期显示样式（倾斜度）
               formatter: function (value) {
                 //在这里写你需要的时间格式
