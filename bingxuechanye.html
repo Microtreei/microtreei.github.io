@@ -1,119 +1,141 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <meta charset="utf-8" />
+    <title></title>
+    <!-- 引入 echarts.js -->
+    <script src="./echarts.min.js"></script>
+    <script src="https://s3.pstatp.com/cdn/expire-1-M/jquery/3.1.1/jquery.min.js"></script>
+  </head>
 
-    <head>
-        <meta charset="utf-8">
-        <title></title>
-        <!-- 引入 echarts.js -->
-        <script src="./echarts.min.js"></script>
-        <script src="https://s3.pstatp.com/cdn/expire-1-M/jquery/3.1.1/jquery.min.js"></script>
-    </head>
+  <body>
+    <!-- 为ECharts准备一个具备大小（宽高）的Dom -->
+    <div style="height: 700px; width: 900px" id="Scatter"></div>
+    <script type="text/javascript">
+      $(document).ready(function () {
+        var MyScatter = echarts.init(document.getElementById("Scatter"));
+        option = {
+          title: {
+            textStyle: {
+              color: "#000", //'black'，字体颜色
+              fontStyle: "normal", //'italic'(倾斜) | 'oblique'(倾斜体) ，字体风格
+              fontWeight: "bold", //'bold'(粗体) | 'bolder'(粗体) | 'lighter'(正常粗细) ，字体粗细
+              fontFamily: "sans-serif", //'sans-serif' | 'serif' | 'monospace' | 'Arial' | 'Courier New'
+              // 'Microsoft YaHei'(微软雅黑) ，文字字体
+              fontSize: 18, //字体大小
+              lineHeight: 18, //字体行高
+            },
+            text: "2016-2023冰雪产业市场规模图",
+            subtext: "数据来源:国家体育总局",
+            left: "center",
+          },
+          tooltip: {
+            trigger: "axis",
+            axisPointer: {
+              type: "cross",
+              crossStyle: {
+                color: "#999",
+              },
+            },
+          },
+          toolbox: {
+            feature: {
+              magicType: { show: true, type: ["line", "bar"] },
+              restore: { show: true },
+            },
+          },
+          legend: {
+            data: ["Scale", "Rate"],
+            top: "bottom",
+          },
+          xAxis: [
+            {
+              type: "category",
+              data: [
+                "2016",
+                "2017",
+                "2018",
+                "2019",
+                "2020（疫情）",
+                "2021",
+                "2022（预测）",
+                "2023（预测）",
+              ],
+              axisPointer: {
+                type: "shadow",
+              },
+              axisLabel: {
+                fontSize: 15,
+              },
+            },
+          ],
+          yAxis: [
+            {
+              type: "value",
+              name: "Scale",
+              min: 0,
+              max: 7000,
+              // interval: 50,
+              axisLabel: {
+                formatter: "{value} 亿元",
+                fontSize: 12,
+              },
+            },
+            {
+              type: "value",
+              name: "Rate",
+              min: -0.4,
+              max: 0.6,
+              interval: 0.2,
+              axisLabel: {
+                formatter: "{value} %",
+                fontSize: 12,
+              },
+            },
+          ],
+          series: [
+            {
+              label: {
+                show: true,
+                fontSize: 15,
+                color: "#485a6d",
+              },
+              color: ["#b2b6b9"],
+              name: "Scale",
+              type: "bar",
+              tooltip: {
+                valueFormatter: function (value) {
+                  return value + " 亿元";
+                },
+              },
+              barCategoryGap: "70%",
+              data: [
+                3643.7, 3990.1, 4513.7, 5208.8, 3811, 5788, 5928.44, 6778.2,
+              ],
+            },
 
-    <body>
-        <!-- 为ECharts准备一个具备大小（宽高）的Dom -->
-        <div style="height: 400px;width: 700px;" id="Scatter"></div>
-        <script type="text/javascript">
-            $(document).ready(function() {
-                var MyScatter = echarts.init(document.getElementById('Scatter'));
-                option = {
-  title: {
-    text: '2016-2023冰雪产业市场规模图',
-    subtext: '数据来源:国家体育总局',
-    left: 'center'
-  },
-  tooltip: {
-    trigger: 'axis',
-    axisPointer: {
-      type: 'cross',
-      crossStyle: {
-        color: '#999'
-      }
-    }
-  },
-  toolbox: {
-    feature: {
-      magicType: { show: true, type: ['line', 'bar'] },
-      restore: { show: true }
-    }
-  },
-  legend: {
-    data: ['Scale', 'Rate'],top:'bottom'
-  },
-  xAxis: [
-    {
-      type: 'category',
-      data: [
-        '2016',
-        '2017',
-        '2018',
-        '2019',
-        '2020（疫情）',
-        '2021',
-        '2022（预测）',
-        '2023（预测）'
-      ],
-      axisPointer: {
-        type: 'shadow'
-      }
-    }
-  ],
-  yAxis: [
-    {
-      type: 'value',
-      name: 'Scale',
-      min: 0,
-      max: 7000,
-      // interval: 50,
-      axisLabel: {
-        formatter: '{value} 亿元'
-      }
-    },
-    {
-      type: 'value',
-      name: 'Rate',
-      min: -0.4,
-      max: 0.6,
-      interval: 0.2,
-      axisLabel: {
-        formatter: '{value} %'
-      }
-    }
-  ],
-  series: [
-    {
-        label:{show:true},
-        color:['#46DEE0','#c4ebad'],
-      name: 'Scale',
-      type: 'bar',
-      tooltip: {
-        valueFormatter: function (value) {
-          return value + ' 亿元';
-        }
-      },
-      barCategoryGap: '70%',
-      data: [3643.7, 3990.1, 4513.7, 5208.8, 3811, 5788, 5928.44, 6778.2]
-    },
+            {
+              label: {
+                show: true,
+                fontSize: 15,
+                color: "#485a6d",
+              },
+              color: ["#485a6d"],
+              name: "Rate",
+              type: "line",
+              yAxisIndex: 1,
+              tooltip: {
+                valueFormatter: function (value) {
+                  return value + " %";
+                },
+              },
+              data: [0, 0.095, 0.134, 0.154, -0.268, 0.519, 0.0243, 0.143],
+            },
+          ],
+        };
 
-    {
-        label:{show:true,color:'#516b91'},
-        color:['#c4ebad'],
-      name: 'Rate',
-      type: 'line',
-      yAxisIndex: 1,
-      tooltip: {
-        valueFormatter: function (value) {
-          return value + ' %';
-        }
-      },
-      data: [0, 0.095, 0.134, 0.154, -0.268, 0.519, 0.0243, 0.143]
-    }
-  ]
-};
-
-                
-                MyScatter.setOption(option);
-            });
-        </script>
-    </body>
-
+        MyScatter.setOption(option);
+      });
+    </script>
+  </body>
 </html>
