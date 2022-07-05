@@ -10,7 +10,7 @@
 
   <body>
     <!-- 为ECharts准备一个具备大小（宽高）的Dom -->
-    <div style="height: 1000px; width: 600px" id="Scatter"></div>
+    <div style="height: 600px; width: 500px" id="Scatter"></div>
     <script type="text/javascript">
       $(document).ready(function () {
         var MyScatter = echarts.init(document.getElementById("Scatter"));
@@ -121,9 +121,9 @@
             type: "time",
             name: "时间轴",
             data: data,
-
             inverse: true,
             axisLabel: {
+              fontSize: 9,
               //设置日期显示样式（倾斜度）
               formatter: function (value) {
                 //在这里写你需要的时间格式
@@ -157,10 +157,10 @@
 
                   label: {
                     show: true,
-                    fontSize: 15,
+                    fontSize: 12,
                     formatter: "安贤洙",
                     fontStyle: "lighter",
-                    position: "left",
+                    position: "bottom",
                     distance: 10,
                     color: "inherit",
                   },
@@ -205,7 +205,7 @@
 
                   label: {
                     show: true,
-                    fontSize: 17,
+                    fontSize: 12,
                     formatter: "冰雪跨境",
                     fontStyle: "lighter",
                     position: "bottom",
@@ -246,7 +246,7 @@
 
                   label: {
                     show: true,
-                    fontSize: 15,
+                    fontSize: 10,
                     formatter: "放弃国籍",
                     fontStyle: "lighter",
                     position: "right",
@@ -278,7 +278,7 @@
 
                   label: {
                     show: true,
-                    fontSize: 25,
+                    fontSize: 20,
                     formatter: "归化球员",
                     fontStyle: "lighter",
                     position: "left",
@@ -301,7 +301,7 @@
 
                   label: {
                     show: true,
-                    fontSize: 10,
+                    fontSize: 8,
                     formatter: "归化球员",
                     fontStyle: "lighter",
                     position: "right",
@@ -334,7 +334,7 @@
 
                   label: {
                     show: true,
-                    fontSize: 10,
+                    fontSize: 8,
                     formatter: "归化运动员",
                     fontStyle: "lighter",
                     position: "top",
@@ -358,7 +358,7 @@
 
                   label: {
                     show: true,
-                    fontSize: 10,
+                    fontSize: 8,
                     formatter: "归化运动员",
                     fontStyle: "lighter",
                     position: "top",
@@ -391,7 +391,7 @@
 
                   label: {
                     show: true,
-                    fontSize: 26,
+                    fontSize: 20,
                     formatter: "国际主义",
                     fontStyle: "lighter",
                     position: "left",
@@ -415,7 +415,7 @@
 
                   label: {
                     show: true,
-                    fontSize: 16,
+                    fontSize: 13,
                     formatter: "国际主义",
                     fontStyle: "lighter",
                     position: "bottom",
@@ -446,7 +446,7 @@
 
                   label: {
                     show: true,
-                    fontSize: 13,
+                    fontSize: 11,
                     formatter: "混血运动员",
                     fontStyle: "lighter",
                     position: "right",
@@ -478,7 +478,7 @@
 
                   label: {
                     show: true,
-                    fontSize: 18,
+                    fontSize: 14,
                     formatter: "双重国籍",
                     fontStyle: "lighter",
                     position: "right",
@@ -511,7 +511,7 @@
 
                   label: {
                     show: true,
-                    fontSize: 39,
+                    fontSize: 25,
                     formatter: "归化入籍",
                     fontStyle: "lighter",
                     position: "top",
@@ -534,10 +534,10 @@
 
                   label: {
                     show: true,
-                    fontSize: 26,
+                    fontSize: 0,
                     formatter: "归化入籍",
                     fontStyle: "lighter",
-                    position: "bottom",
+                    position: "top",
                     distance: 5,
                     color: "inherit",
                   },
@@ -557,10 +557,10 @@
 
                   label: {
                     show: true,
-                    fontSize: 10,
+                    fontSize: 0,
                     formatter: "归化入籍",
                     fontStyle: "lighter",
-                    position: "bottom",
+                    position: "top",
                     distance: 10,
                     color: "inherit",
                   },
