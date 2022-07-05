@@ -2,7 +2,7 @@
  * @Author: 顾立辉 glh9803@outlook.com
  * @Date: 2022-07-04 20:54:15
  * @LastEditors: 顾立辉 glh9803@outlook.com
- * @LastEditTime: 2022-07-05 08:19:44
+ * @LastEditTime: 2022-07-05 09:04:08
  * @FilePath: \microtreei.github.io\huaxuechang.html
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 -->
@@ -18,7 +18,7 @@
 
   <body>
     <!-- 为ECharts准备一个具备大小（宽高）的Dom -->
-    <div style="height: 600px; width: 800px" id="Scatter"></div>
+    <div style="height: 600px; width: 600px" id="Scatter"></div>
     <script type="text/javascript">
       $(document).ready(function () {
         var MyScatter = echarts.init(document.getElementById("Scatter"));
@@ -84,10 +84,7 @@
                 "#485a6d",
               ],
               data: [
-                {
-                  value: 65,
-                  name: "新疆",
-                },
+                {value: 65, name: "新疆",},
                 { value: 49, name: "山西" },
                 { value: 42, name: "内蒙古" },
                 { value: 124, name: "黑龙江" },
