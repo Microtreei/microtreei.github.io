@@ -207,6 +207,7 @@
                 },
               ],
               type: "scatter",
+              
               symbolSize: function (Item) {
                 return Item[3];
               },
@@ -278,6 +279,9 @@
 
             {
               name: "冰雪经济",
+              itemStyle: {
+                  color: "#818e95",
+                },
               data: [
                 {
                   value: [0.06, "2022-01-28", "冰雪经济", 42],
@@ -379,7 +383,9 @@
               data: [
                 {
                   value: [-0.1, "2022-01-30", "归化运动员", 29],
-
+                  itemStyle: {
+                  color: "#485a6d",
+                },
                   label: {
                     show: true,
                     fontSize: 13,
@@ -497,6 +503,9 @@
 
             {
               name: "双重国籍",
+              itemStyle: {
+                  color: "#697b8e",
+              },
               data: [
                 {
                   value: [0, "2021-05-18", "双重国籍", 52],
