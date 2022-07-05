@@ -9,11 +9,9 @@
 </head>
 
 <body>
-
-    <div id = 'div1' style="width: 300px;height: 400px;" ></div>
+    <div id = 'div1' style="width: 800px;height: 600px;" ></div>
     <script>// prettier-ignore
-        var mychart = echarts.init(document.getElementById('div1'))
-         
+        var mychart = echarts.init(document.getElementById('div1'))   
 var option;
 var data = [
   {
@@ -27,20 +25,14 @@ var data = [
             name: '奥地利',
             value: 438
           },
-          
           {
             name: '意大利',
             value: 288,
-            
           },
-          
-          
           {
             name: '法国',
             value: 251
           },
-          
-          
           {
             name:'瑞士',
             value:354
@@ -145,32 +137,23 @@ var data = [
             name: '中国',
             value: 346
           },
-          
           {
             name: '日本',
             value: 580,
             
           },
-          
-          
           {
             name: '伊朗',
             value: 34
           },
-          
-          
           {
             name:'韩国',
             value:21
           },
-          
           {
             name:'其他',
             value:25
           },
-                  
-        
-          
         ]
       },   
 
@@ -203,8 +186,6 @@ var data = [
         ]
       },   
       
-      
-
 
     ]
 }
@@ -220,17 +201,28 @@ option = {
                  },
 
   title: {
+    textStyle: {
+            color: '#000',//'black'，字体颜色
+            fontStyle: 'normal',//'italic'(倾斜) | 'oblique'(倾斜体) ，字体风格
+            fontWeight: 'bold',//'bold'(粗体) | 'bolder'(粗体) | 'lighter'(正常粗细) ，字体粗细
+            fontFamily: 'sans-serif',//'sans-serif' | 'serif' | 'monospace' | 'Arial' | 'Courier New' 
+            // 'Microsoft YaHei'(微软雅黑) ，文字字体
+            fontSize: 18,//字体大小
+            lineHeight: 18,//字体行高
+          },
     left: 'center',
-    text: '全球滑雪场分布图'
+    text: '全球滑雪场分布图',
+    subtext: '数据来源：https://www.skiresort.info/'
   },
   visualMap: {
     type: 'continuous',
     min: 10,
     max: 2000,
     inRange: {
-      color: ['#b196a7', '#001852', '#7e6a89','#abc6c1','#5f87b1','#b7b7b7']
+      color: ['#a5bbc1', '#b0c4c2', '#c7ced0','#38586d','#8297a5','#b2b6b9']
     },
     left:"right",
+    padding:[0, 120, 40, 20],
     origin:'horizontal',
     top:'bottom',
     hoverLink:true,    
@@ -238,7 +230,7 @@ option = {
   series: {
     type: 'sunburst',
     data: data,
-    radius: ['20%', '90%'],
+    radius: ['20%', '80%'],
             avoidLabelOverlap: true,
     label: {
       rotate: 'radial',
@@ -246,8 +238,6 @@ option = {
     }
   }
 };
-
-
             mychart.setOption(option)
             </script>
 
