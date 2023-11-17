@@ -97,7 +97,7 @@
     </div>
   </section>
 
-
+  <!-- <div class="text-center">The prompts for the results below can be found here</div> -->
   <!-- <iframe src="model_obj.html" align="middle"
     style="margin-left:400px;width:800px; height:500px; border: 0;display:block">
 
@@ -159,12 +159,14 @@
     <div class="hero-body">
       <div class="container">
         <!-- <div id="results-carousel" class="carousel results-carousel"> -->
-          <div class="item">
+          <div class="item" style="position:relative;left:200px;top:10px;width:1024px;height:600px">
             <!-- Your image here -->
-            <img src="static/images/pipeline.png" class="aligncenter" width="1024" height="422" alt="MY ALT TEXT" />
+
+            <img class="aligncenter" src="static/images/pipeline.png"  alt="MY ALT TEXT" />
             <h2 class="subtitle has-text-centered">
-              First image description.
+              <b>Overview of our pipeline.</b> (a) <b>Scene Context Initialization</b> contains a supporting database to provide novel viewpoint data for progressive generation. (b) <b>Unified 3D Representation</b> provides a unified representation for the generated scene, which allows our approach to accomplish diverse scene generation and to hold the 3D consistency at the same time. (c) <b>3D-Aware Generative Refinement</b> alleviates the cumulative error issue during long-term extrapolation by exploiting large-scale natural images prior to generatively refine the synthesized novel viewpoint image. The consistency regularization module is used for test-time optimization.
             </h2>
+
           </div>
         <!-- </div> -->
       </div>
